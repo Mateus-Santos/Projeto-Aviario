@@ -2,10 +2,11 @@ package uniftc.projeto;
 
 
 
-public class Cliente {
+public class Cliente extends Pessoa{
     private int id_cliente;
     private String data_cadastro;
-
+    
+    
     public int getId_cliente() {
         return id_cliente;
     }

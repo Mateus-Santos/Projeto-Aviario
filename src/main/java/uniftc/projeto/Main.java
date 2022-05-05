@@ -5,7 +5,22 @@ package uniftc.projeto;
 public class Main {
     public static void main(String[] args) {
         
+        //Cadastrando uma pessoa
+        Pessoa pessoa = new Pessoa(1, "Mateus Santos", "mateus.jesus2@ftc.edu.br");
         
+        System.out.println("Pessoa cadastrada com sucesso!!");
+        System.out.println("Id: " + pessoa.getId_pessoa());
+        
+        System.out.println("Pessoa cadastrada com sucesso!!");
+        System.out.println("Nome: " + pessoa.getNome());
+        
+        System.out.println("Pessoa cadastrada com sucesso!!");
+        System.out.println("Email: " + pessoa.getEmail());
+        
+        Cliente cliente = new Cliente();
+        Funcionario funcionario = new Funcionario();
+        
+        /*
         //Criando e alterando o objeto Aviario
         Aviario av1 = new Aviario();
         av1.consultar_estrutura();
@@ -61,9 +76,7 @@ public class Main {
         e1.status();
         o1.status();
         
-        
-        
-        
+        */
     }
     
 }

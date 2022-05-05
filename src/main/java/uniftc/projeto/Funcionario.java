@@ -1,8 +1,7 @@
 package uniftc.projeto;
 
 
-public class Funcionario {
-    
+public class Funcionario extends Pessoa {
     private int id_funcionario;
     private String cargo;
     
@@ -22,13 +21,11 @@ public class Funcionario {
         this.cargo = cargo;
     }
 
-    
-    
     // metodos
     void ConsutarPedido(){
         
     }
-    
+  
     void CadastrarPedido(){
         
         
@@ -40,12 +37,11 @@ public class Funcionario {
     }
     
     void AtualizarPessoa(){
-        
-        
+
     }
     
     void AtualizarPedido(){
-        
-        
+
     }
+    
 }
