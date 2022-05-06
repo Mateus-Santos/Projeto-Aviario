@@ -1,24 +1,20 @@
-
 package uniftc.projeto;
-
 
 public class Main {
     public static void main(String[] args) {
         
-        //Cadastrando uma pessoa
-        Pessoa pessoa = new Pessoa(1, "Mateus Santos", "mateus.jesus2@ftc.edu.br");
+        Cliente cliente = new Cliente("06/05/2022", "Mateus Santos", "mateus.jesus2@ftc.edu.br");
         
-        System.out.println("Pessoa cadastrada com sucesso!!");
-        System.out.println("Id: " + pessoa.getId_pessoa());
+        System.out.println("Cliente cadastrado com sucesso!!");
+        System.out.println("\nNome: " + cliente.getNome());
+        System.out.println("\nEmail: " + cliente.getEmail());
+        System.out.println("\nData de Cadastro: " + cliente.getData_cadastro());
         
-        System.out.println("Pessoa cadastrada com sucesso!!");
-        System.out.println("Nome: " + pessoa.getNome());
-        
-        System.out.println("Pessoa cadastrada com sucesso!!");
-        System.out.println("Email: " + pessoa.getEmail());
-        
-        Cliente cliente = new Cliente();
-        Funcionario funcionario = new Funcionario();
+        Funcionario funcionario = new Funcionario("Gerente", "Mateus Santos", "mateus.jesus2@ftc.edu.br");
+        System.out.println("\nFuncionario cadastrado com sucesso!!");
+        System.out.println("\nNome: " + funcionario.getNome());
+        System.out.println("\nEmail: " + funcionario.getEmail());
+        System.out.println("\nCargo: " + funcionario.getCargo());
         
         /*
         //Criando e alterando o objeto Aviario

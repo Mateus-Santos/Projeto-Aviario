@@ -4,7 +4,13 @@ package uniftc.projeto;
 public class Funcionario extends Pessoa {
     private int id_funcionario;
     private String cargo;
-    
+
+    public Funcionario(String cargo, String nome, String email) {
+        super(nome, email);
+        this.cargo = cargo;
+    }
+
+    //Gets e Sets
     public int getId_funcionario() {
         return id_funcionario;
     }
@@ -21,27 +27,28 @@ public class Funcionario extends Pessoa {
         this.cargo = cargo;
     }
 
-    // metodos
-    void ConsutarPedido(){
-        
+    public int getId_pessoa() {
+        return id_pessoa;
     }
-  
-    void CadastrarPedido(){
-        
-        
-    }
-    
-    void CadastrarPessoa(){
-        
-        
-    }
-    
-    void AtualizarPessoa(){
 
+    public void setId_pessoa(int id_pessoa) {
+        this.id_pessoa = id_pessoa;
     }
-    
-    void AtualizarPedido(){
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
     
 }
