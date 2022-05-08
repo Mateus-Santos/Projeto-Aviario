@@ -18,11 +18,17 @@ public class Aviario {
     private double largura;
     private double comprimento;
     private double altura;
-    
-    private Estrutura[] estrutura_direita;
-    private Estrutura[] estrutura_esquerda;
-    
-    
+    //Alguns aviarios podem possuir mais de uma estrutura.
+    public List<Obstaculo> estrutura_direita = new ArrayList<Obstaculo>();
+    public List<Obstaculo> estrutura_esquerda = new ArrayList<Obstaculo>();
+
+    public Aviario(Cliente cliente, double largura, double comprimento, double altura) {
+        this.cliente = cliente;
+        this.largura = largura;
+        this.comprimento = comprimento;
+        this.altura = altura;
+    }
+       
     // inserindo os GETs e SETs
     public Cliente getCliente(){
         return this.cliente;
@@ -32,22 +38,32 @@ public class Aviario {
         this.cliente = cliente;
     }
     
-    public Estrutura[] getEstrutura_direita(){
-        return this.estrutura_direita;
+    // Variavel com sigla "ed" significa Estrutura Direita
+    public void setEstrutura_direita(Obstaculo ed){
+        estrutura_direita.add(ed);
     }
     
-    //Variavel com sigla "ed" significa Estrutura Direita
-    public void setEstrutura_direita(Estrutura ed){
-        this.estrutura_direita[estrutura_direita.length-1] = ed;
+    public String getEstrutura_direita(){
+        Obstaculo obstaculo = null;
+        for(int i=0; i < this.estrutura_direita.size(); i++){
+            obstaculo = this.estrutura_direita.get(i);
+            System.out.println("Estrutura: " + obstaculo.getNome() + " | Metragem: " + obstaculo.getMetragem());
+        }
+        return "Finalizado!";
     }
     
-    public Estrutura[] getEstrutura_esquerda(){
-        return this.estrutura_esquerda;
+    // Variavel com sigla ee significa Estrutura esquerda
+    public void setEstrutura_esquerda(Obstaculo ee){
+        estrutura_esquerda.add(ee);
     }
     
-    //Variavel com sigla ee significa Estrutura esquerda
-    public void setEstrutura_esquerda(Estrutura ee){
-        this.estrutura_esquerda[estrutura_esquerda.length-1] = ee;
+    public String getEstrutura_esquerda(){
+        Obstaculo obstaculo = null;
+        for(int i=0; i < this.estrutura_esquerda.size(); i++){
+            obstaculo = this.estrutura_esquerda.get(i);
+            System.out.println("Estrutura: " + obstaculo.getNome() + " | Metragem: " + obstaculo.getMetragem());
+        }
+        return "Finalizado!";
     }
 
     public double getLargura(){
@@ -60,7 +76,6 @@ public class Aviario {
 
     public double getComprimento(){
         return this.comprimento;
-        
     }
     
     public void setComprimento(double com){
@@ -73,30 +88,54 @@ public class Aviario {
     
     public void setAltura(double alt){
         this.altura = alt;
-    }    
+    }  
     
-    // Inserindo as funções
-    void consultar_estrutura(){
-        System.out.println("Nome do Cliente: " + this.cliente);
-        System.out.println("Estrutura da direita: " + this.estrutura_direita);
-        System.out.println("Estrutura da esquerda: " + this.estrutura_esquerda);
-        System.out.println("Largura: " + this.largura);
-        System.out.println("Comprimento: " + this.comprimento);
-        System.out.println("Altura: " + this.altura);
+    //Calcular a metragem da tela
+    public double metragemTelaDireita (){
+        double metragem_tela = 0;
+        if(this.estrutura_direita.size() > 0){
+            double metragem_obstaculos = 0;
+            Obstaculo obstaculo = null;
+            for(int i=0; i < this.estrutura_direita.size(); i++){
+                obstaculo = this.estrutura_direita.get(i);
+                metragem_obstaculos = metragem_obstaculos + obstaculo.getMetragem();
+            }
+            metragem_tela = this.getComprimento() - metragem_obstaculos;
+            return metragem_tela;
+        }
+        else{
+            metragem_tela = this.getComprimento();
+            return metragem_tela;
+        }
     }
     
-    void atualizar_estrutura(){
-        /*
-        
-        this.cliente = this.cliente + " Atualizado";
-        this.estrutura_direita = this.estrutura_direita + this.estrutura_direita;
-        this.estrutura_esquerda = this.estrutura_esquerda + this.estrutura_esquerda;
-        this.largura = this.largura + this.largura;
-        this.comprimento = this.comprimento + this.comprimento;
-        this.altura = this.altura + this.altura;
-        this.consultar_estrutura();
-        
-        */
+    public double metragemTelaEsquerda(){
+        double metragem_tela = 0;
+        if(this.estrutura_esquerda.size() > 0){
+            double metragem_obstaculos = 0;
+            Obstaculo obstaculo = null;
+            for(int i=0; i < this.estrutura_esquerda.size(); i++){
+                obstaculo = estrutura_esquerda.get(i);
+                metragem_obstaculos = metragem_obstaculos + obstaculo.getMetragem();
+            }
+            metragem_tela = this.getComprimento() - metragem_obstaculos;
+            return metragem_tela;
+        }
+        else{
+            metragem_tela = this.getComprimento();
+            return metragem_tela;
+        }
     }
     
+    public double orcamentoTelaEsquerda(double metragem_tela, Tela tela){
+        double orcamento = 0;
+        orcamento = tela.valor_metro()*metragem_tela;
+        return orcamento;
+    }
+    
+    public double orcamentoTelaDireita(double metragem_tela, Tela tela){
+        double orcamento = 0;
+        orcamento = tela.valor_metro()*metragem_tela;
+        return orcamento;
+    }
 }
