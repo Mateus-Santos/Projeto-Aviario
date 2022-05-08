@@ -2,77 +2,44 @@ package uniftc.projeto;
 
 public class Main {
     public static void main(String[] args) {
-        
+        //Cadastrado de cliente
         Cliente cliente = new Cliente("06/05/2022", "Mateus Santos", "mateus.jesus2@ftc.edu.br");
-        
         System.out.println("Cliente cadastrado com sucesso!!");
         System.out.println("\nNome: " + cliente.getNome());
         System.out.println("\nEmail: " + cliente.getEmail());
         System.out.println("\nData de Cadastro: " + cliente.getData_cadastro());
         
-        Funcionario funcionario = new Funcionario("Gerente", "Mateus Santos", "mateus.jesus2@ftc.edu.br");
+        //Cadastrado de funcionario
+        Funcionario funcionario = new Funcionario("Gerente", "Ronaldo Alves", "ronaldo.alves@ftc.edu.br");
         System.out.println("\nFuncionario cadastrado com sucesso!!");
         System.out.println("\nNome: " + funcionario.getNome());
         System.out.println("\nEmail: " + funcionario.getEmail());
         System.out.println("\nCargo: " + funcionario.getCargo());
         
-        /*
-        //Criando e alterando o objeto Aviario
-        Aviario av1 = new Aviario();
-        av1.consultar_estrutura();
-
-        av1.setCliente("Juliel Vieira");
-        av1.setEstrutura_direita(10);
-        av1.setEstrutura_esquerda(10);
-        av1.setLargura(30);
-        av1.setComprimento(40);
-        av1.setAltura(2);
+        //Criar um obstaculo
+        Obstaculo exaustor = new Obstaculo("Exaustor", 1.5);
+        Obstaculo cooler = new Obstaculo("Cooler", 2.0);
+        //Criando estrutura
         
-        System.out.println("");
-        System.out.println("Atualizando...");
-        System.out.println("");
+        //Cliente, Largura|comprimento|altura
+        Aviario aviario = new Aviario(cliente, 100.0, 100.0 ,2.5);
+        aviario.setEstrutura_direita(cooler);
+        aviario.setEstrutura_direita(cooler);
+        aviario.setEstrutura_esquerda(exaustor);
+        aviario.setEstrutura_esquerda(exaustor);
+        //Toda tela possui uma descrição, valor do rolo, metro por rolo
+        Tela tela = new Tela("Fina", 100.0, 50.0);
         
-        av1.consultar_estrutura();
-        
-        
-        //Criando e alterando o objeto estrutura
-        
-        Estrutura e1 = new Estrutura();
-        e1.status();
-        e1.setObstaculo("Ventilador");
-        e1.setQtd_obstaculo(10);
-        
-        
-        System.out.println("");
-        System.out.println("Atualizando...");
-        System.out.println("");
-        
-        e1.status();
-        
-        
-        //Criando e alterando o objeto obstaculo
-        Obstaculo o1 = new Obstaculo();
-        o1.status();
-        String name = e1.getObstaculo();
-        o1.setNome(name);
-        o1.setMetragem(200);
-        
-        System.out.println("");
-        System.out.println("Atualizando...");
-        System.out.println("");
-        
-        o1.status();
-        
-        av1.atualizar_estrutura();
-        
-        
-        System.out.println("");
-        System.out.println("RESUMO");
-        av1.consultar_estrutura();
-        e1.status();
-        o1.status();
-        
-        */
+        Pedido pedido = new Pedido();
+        System.out.println("\nAviario Direito: " + aviario.getEstrutura_direita());
+        System.out.println("\nAviario Esquerdo: " + aviario.getEstrutura_esquerda());
+        System.out.println("\nMetragem de tela direita aviario: " + aviario.metragemTelaDireita());
+        System.out.println("\nMetragem de tela esquerda aviario: " + aviario.metragemTelaEsquerda());
+        System.out.println("Orcamento de tela direita aviario: R$: " + aviario.orcamentoTelaEsquerda(aviario.metragemTelaDireita(), tela));
+        System.out.println("Orcamento de tela esquerda aviario: R$: " + aviario.orcamentoTelaEsquerda(aviario.metragemTelaEsquerda(), tela));
+        double orcamento_total = 0;
+        orcamento_total = aviario.orcamentoTelaEsquerda(aviario.metragemTelaDireita(), tela)+aviario.orcamentoTelaEsquerda(aviario.metragemTelaEsquerda(), tela);
+        System.out.println("Orçamento total das telas é de: R$: " + orcamento_total);
     }
     
 }

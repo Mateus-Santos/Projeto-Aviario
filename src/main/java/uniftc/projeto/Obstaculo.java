@@ -3,6 +3,11 @@ package uniftc.projeto;
 public class Obstaculo {
     private String nome;
     private double metragem;
+
+    public Obstaculo(String nome, double metragem) {
+        this.nome = nome;
+        this.metragem = metragem;
+    }
     
     public String getNome(){
         return this.nome;
@@ -20,9 +25,4 @@ public class Obstaculo {
         this.metragem = met;
     }
     
-    void status(){
-        System.out.println("Nome: " + this.nome);
-        System.out.println("Metragem: " + this.metragem);
-        System.out.println("");
-    }
 }

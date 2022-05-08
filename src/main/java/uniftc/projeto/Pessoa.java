@@ -12,30 +12,27 @@ public abstract class Pessoa {
         this.email = email;
     }
     
-    public int getId_pessoa(){
+    protected int getId_pessoa(){
         return this.id_pessoa;
     }
     
-    public void setId_pessoa(int id){
+    protected void setId_pessoa(int id){
         this.id_pessoa = id;
     }
     
-    public String getNome(){
+    protected String getNome(){
         return this.nome;
     }
 
-    public void setNome(String name){
+    protected void setNome(String name){
         this.nome = name;
     }
     
-    public String getEmail(){
+    protected String getEmail(){
         return this.email;
     }
     
     public void setEmail(String em){
         this.email = em;
     }
-
-
-
 }
