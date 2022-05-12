@@ -25,13 +25,6 @@ public class DadosCliente {
 	}
 
 	public List<Cliente> findAll() {
-		Cliente cliente = null;
-		List<String> clientes = new ArrayList<>();
-		for(int i=0; i < banco_clientes.size(); i++) {
-			cliente = banco_clientes.get(i);
-			clientes.add({cliente.getNome(), cliente.getEmail()});
-		}
-		cliente = banco_cliente.get();
 		return banco_clientes;
 	}
 
