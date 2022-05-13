@@ -1,11 +1,22 @@
-
 package uniftc.projeto;
-
 
 public class Main {
     public static void main(String[] args) {
         
+        Cliente cliente = new Cliente("06/05/2022", "Mateus Santos", "mateus.jesus2@ftc.edu.br");
         
+        System.out.println("Cliente cadastrado com sucesso!!");
+        System.out.println("\nNome: " + cliente.getNome());
+        System.out.println("\nEmail: " + cliente.getEmail());
+        System.out.println("\nData de Cadastro: " + cliente.getData_cadastro());
+        
+        Funcionario funcionario = new Funcionario("Gerente", "Mateus Santos", "mateus.jesus2@ftc.edu.br");
+        System.out.println("\nFuncionario cadastrado com sucesso!!");
+        System.out.println("\nNome: " + funcionario.getNome());
+        System.out.println("\nEmail: " + funcionario.getEmail());
+        System.out.println("\nCargo: " + funcionario.getCargo());
+        
+        /*
         //Criando e alterando o objeto Aviario
         Aviario av1 = new Aviario();
         av1.consultar_estrutura();
@@ -61,9 +72,7 @@ public class Main {
         e1.status();
         o1.status();
         
-        
-        
-        
+        */
     }
     
 }
