@@ -2,14 +2,16 @@ package modelagem;
 
 
 public class Funcionario extends Pessoa {
-    private int id_funcionario;
+	private static final long serialVersionUID = 1L;
+	
+	private int id_funcionario;
     private String cargo;
 
-    public Funcionario(String cargo, String nome, String email) {
-    	super(nome, email);
+    public Funcionario(String cargo, String nome, String email, String endereco, String cpf) {
+    	super(nome, email, endereco, cpf);
         this.cargo = cargo;
     }
-
+    
     //Gets e Sets
     public int getId_funcionario() {
         return id_funcionario;

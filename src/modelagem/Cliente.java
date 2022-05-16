@@ -9,10 +9,11 @@ public class Cliente extends Pessoa {
 	private int id_cliente;
 	private String data_cadastro;
 
-	public Cliente(String data_cadastro, String nome, String email) {
-		super(nome, email);
+	public Cliente(String data_cadastro, String nome, String email, String endereco, String cpf) {
+		super(nome, email, endereco, cpf);
 		this.data_cadastro = data_cadastro;
 	}
+	
 
 	public int getId_cliente() {
 		return id_cliente;
