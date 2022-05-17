@@ -35,7 +35,8 @@ public class Main {
 		// Cliente, Potencia das Lampadas
 		Lampada lampada = new Lampada(150.0);
 		
-		Pedido pedido = new Pedido();
+		
+		Pedido pedido = new Pedido(funcionario, "17/05/2022", cliente);
 		System.out.println("\nAviario Direito: " + aviario.getEstrutura_direita());
 		System.out.println("\nAviario Esquerdo: " + aviario.getEstrutura_esquerda());
 		System.out.println("\nMetragem de tela direita aviario: " + pedido.metragemTelaDireita(aviario));
@@ -47,7 +48,7 @@ public class Main {
 		double orcamento_total = 0;
 		orcamento_total = pedido.orcamentoTelaEsquerda(pedido.metragemTelaDireita(aviario), tela)
 				+ pedido.orcamentoTelaEsquerda(pedido.metragemTelaEsquerda(aviario), tela);
-		System.out.println("Orçamento total das telas é de: R$: " + orcamento_total);
+		System.out.println("Orcamento total das telas e de: R$: " + orcamento_total);
 		System.out.println("Quantidade de lampadas necess�rias: " + lampada.quantidadeLampdas(aviario, aviario, aviario));
 	}
 
