@@ -22,7 +22,8 @@ public class Main {
 		
 		// Criando estrutura
 		// Cliente, Largura, comprimento, altura, Pé direito
-		Aviario aviario = new Aviario(cliente, 12, 150, 2.6, 1.0);
+		Aviario aviario = new Aviario(cliente, 12, 206.5, 2, 1.0);
+		//413
 		//aviario.setEstrutura_direita(cooler);
 		//aviario.setEstrutura_direita(cooler);
 		//aviario.setEstrutura_esquerda(exaustor);
@@ -31,7 +32,7 @@ public class Main {
 		//Toda tela possui uma comprimento, altura do rolo, valor_rolo.
 		//metragem quadrada da tela 2.600 = 100
 		//metragem quadrada do aviario
-		Tela tela = new Tela(150, 2.6, 1);
+		Tela tela = new Tela(150, 2.6, 16.40);
 		// Cliente, Potencia das Lampadas
 		Lampada lampada = new Lampada(150.0);
 		
@@ -50,6 +51,93 @@ public class Main {
 				+ pedido.orcamentoTelaEsquerda(pedido.metragemTelaEsquerda(aviario), tela);
 		System.out.println("Orcamento total das telas e de: R$: " + orcamento_total);
 		System.out.println("Quantidade de lampadas necessárias: " + lampada.quantidadeLampdas(aviario, aviario, aviario));
+		
+		//Codigo juliel ------------------------------------
+		
+		Rolo rolo1 = new Rolo(4,50);
+        Rolo rolo2 = new Rolo(6,50);
+        Rolo rolo3 = new Rolo(8,50);
+        Rolo rolo4 = new Rolo(4,100);
+        Rolo rolo5 = new Rolo(6,100);
+        Rolo rolo6 = new Rolo(8,100);
+        
+        Lona lona1 = new Lona(12,150,true);
+        System.out.println("");
+        System.out.println("Área da lona: " + lona1.getArea_lona() + " Metros");
+        System.out.println("");
+        System.out.println("Rolos disponíveis:");
+        int rolo_ideal = 0;
+        if(lona1.getPe_direito()==true){
+            if ((lona1.getComprimento()%100)==0){
+                rolo_ideal = 1;
+            }
+            if ((lona1.getArea_lona()%rolo1.getArea())==0){
+                System.out.println("");
+                System.out.println("Dimensão: " + rolo1.getLargura() + "X" + rolo1.getComprimento() + "M");
+                System.out.println("Quantidade de rolo 1: " + (lona1.getArea_lona()/rolo1.getArea()));
+                if ((((rolo1.getLargura()/lona1.getLargura())*2)==1)&&((lona1.getComprimento()/100)!=1)&& (rolo_ideal == 0) ){
+                    System.out.println("Rolo IDEAL");
+                    rolo_ideal = 1;
+                }
+                
+            }
+            if ((lona1.getArea_lona()%rolo2.getArea())==0){
+                System.out.println("");
+                System.out.println("Dimensão: " + rolo2.getLargura() + "X" + rolo2.getComprimento() + "M");
+                System.out.println("Quantidade de rolo 2: " + (lona1.getArea_lona()/rolo2.getArea()));
+                if ((((rolo2.getLargura()/lona1.getLargura())*2)==1)&&((lona1.getComprimento()/100)!=1)&& (rolo_ideal == 0) ){
+                    System.out.println("Rolo IDEAL");
+                    rolo_ideal = 1;
+                }
+                
+            }
+            if ((lona1.getArea_lona()%rolo3.getArea())==0){
+                System.out.println("");
+                System.out.println("Dimensão: " + rolo3.getLargura() + "X" + rolo3.getComprimento() + "M");
+                System.out.println("Quantidade de rolo 3: " + (lona1.getArea_lona()/rolo3.getArea()));
+                if ((((rolo3.getLargura()/lona1.getLargura())*2)==1)&&((lona1.getComprimento()/100)!=1)&& (rolo_ideal == 0) ){
+                    System.out.println("Rolo IDEAL");
+                    rolo_ideal = 1;
+                }
+                
+            }
+            if ((lona1.getArea_lona()%rolo4.getArea())==0){
+                System.out.println("");
+                System.out.println("Dimensão: " + rolo4.getLargura() + "X" + rolo4.getComprimento() + "M");
+                System.out.println("Quantidade de rolo 4: " + (lona1.getArea_lona()/rolo4.getArea()));
+                if ((((rolo4.getLargura()/lona1.getLargura())*2)==1)&&((lona1.getComprimento()%100)==0)&& (rolo_ideal == 1) ){
+                    System.out.println("Rolo IDEAL");
+                    rolo_ideal = 1;
+                }
+                
+                
+            }
+            if ((lona1.getArea_lona()%rolo5.getArea())==0){
+                System.out.println("");
+                System.out.println("Dimensão: " + rolo5.getLargura() + "X" + rolo5.getComprimento() + "M");
+                System.out.println("Quantidade de rolo 5: " + (lona1.getArea_lona()/rolo5.getArea()));
+                if ((((rolo5.getLargura()/lona1.getLargura())*2)==1)&&((lona1.getComprimento()%100)==0)&& (rolo_ideal == 1) ){
+                    System.out.println("Rolo IDEAL");
+                    rolo_ideal = 1;
+                }
+                
+                
+            }
+            if ((lona1.getArea_lona()%rolo6.getArea())==0){
+                System.out.println("");
+                System.out.println("Dimensão: " + rolo6.getLargura() + "X" + rolo6.getComprimento() + "M");
+                System.out.println("Quantidade de rolo 6: " + (lona1.getArea_lona()/rolo6.getArea()));
+                if ((((rolo6.getLargura()/lona1.getLargura())*2)==1)&&((lona1.getComprimento()%100)==0)&& (rolo_ideal == 1) ){
+                    System.out.println("Rolo IDEAL");
+                    rolo_ideal = 1;
+                }
+                
+                
+            }   
+        }else{
+            
+            
+        }
 	}
 
 }

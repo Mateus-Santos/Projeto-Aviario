@@ -24,7 +24,7 @@ public class Pedido {
         if(aviario.estrutura_direita.size() > 0){
             double metragem_obstaculos = 0;
             Obstaculo obstaculo = null;
-            for(int i=0; i <= aviario.estrutura_direita.size(); i++){
+            for(int i=0; i < aviario.estrutura_direita.size(); i++){
                 obstaculo = aviario.estrutura_direita.get(i);
                 metragem_obstaculos = metragem_obstaculos + obstaculo.getMetragem();
             }
@@ -46,7 +46,7 @@ public class Pedido {
         if(aviario.estrutura_esquerda.size() > 0){
             double metragem_obstaculos = 0; //Variavel que vai armazenar o total de metragem ocupada pelos obstaculos.
             Obstaculo obstaculo = null; //Variavel para armazenar o objeto obstaculo que está no array, um obstaculo por fez, e de cada obstaculo será extraido a metram.
-            for(int i=0; i <= aviario.estrutura_esquerda.size(); i++){
+            for(int i=0; i < aviario.estrutura_esquerda.size(); i++){
                 obstaculo = aviario.estrutura_esquerda.get(i); //Coletando o obstaculo
                 metragem_obstaculos = metragem_obstaculos + obstaculo.getMetragem(); //Coletando a metragem desse obstaculo e somando.
             }
@@ -65,14 +65,14 @@ public class Pedido {
     //Funcoes que aplicam a regra de tres para realizar os orcamentos
     public double orcamentoTelaEsquerda(double metragem_tela, Tela tela){
         double orcamento = 0;	//Variavel que vai armazenar o orcamento.
-        orcamento = (tela.getValor_rolo() * metragem_tela) / tela.getMetro_quadrado(); //Aplicacao da regra de tres.
+        orcamento = (tela.getValor_rolo() * metragem_tela);//Aplicacao da regra de tres.
         this.valor_tela_esquerda = orcamento;
         return this.valor_tela_esquerda;
     }
     //A mesma regra de três apenas para o lado direito.
     public double orcamentoTelaDireita(double metragem_tela, Tela tela){
         double orcamento = 0;
-        orcamento = (tela.getValor_rolo() * metragem_tela) / tela.getMetro_quadrado();
+        orcamento = (tela.getValor_rolo() * metragem_tela);
         this.valor_tela_direita = orcamento;
         return this.valor_tela_direita;
     }
