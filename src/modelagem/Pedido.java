@@ -62,18 +62,17 @@ public class Pedido {
         }
     }
     
-    //Funcoes que aplicam a regra de tres para realizar os orcamentos
+    /*
+     * Para o calculo do orcamento basta multiplicar o valor do 
+     * metro quadrado da tela pela quantidade de metro quadrado necessario.
+     */
     public double orcamentoTelaEsquerda(double metragem_tela, Tela tela){
-        double orcamento = 0;	//Variavel que vai armazenar o orcamento.
-        orcamento = (tela.getValor_rolo() * metragem_tela);//Aplicacao da regra de tres.
-        this.valor_tela_esquerda = orcamento;
+        this.valor_tela_esquerda = (tela.getValor_rolo() * metragem_tela); //Aplicacao da regra de tres.
         return this.valor_tela_esquerda;
     }
-    //A mesma regra de três apenas para o lado direito.
+
     public double orcamentoTelaDireita(double metragem_tela, Tela tela){
-        double orcamento = 0;
-        orcamento = (tela.getValor_rolo() * metragem_tela);
-        this.valor_tela_direita = orcamento;
+    	this.valor_tela_direita = (tela.getValor_rolo() * metragem_tela);
         return this.valor_tela_direita;
     }
     

@@ -12,8 +12,7 @@ public class Rolo {
     public Rolo(double largura, double comprimento){
         this.largura = largura;
         this.comprimento = comprimento;
-        this.area = this.largura * this.comprimento;
-        
+        this.area = this.largura * this.comprimento; 
     }
 
     public double getLargura() {

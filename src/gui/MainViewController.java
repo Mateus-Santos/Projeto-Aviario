@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 
 import application.Main;
 import dados.DadosCliente;
-import dados.DadosPessoas;
 import gui.util.Alerts;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -23,16 +23,13 @@ public class Main {
 		// Criando estrutura
 		// Cliente, Largura, comprimento, altura, Pé direito
 		Aviario aviario = new Aviario(cliente, 12, 206.5, 2, 1.0);
-		//413
 		//aviario.setEstrutura_direita(cooler);
 		//aviario.setEstrutura_direita(cooler);
 		//aviario.setEstrutura_esquerda(exaustor);
 		//aviario.setEstrutura_esquerda(exaustor);
 		
-		//Toda tela possui uma comprimento, altura do rolo, valor_rolo.
-		//metragem quadrada da tela 2.600 = 100
-		//metragem quadrada do aviario
-		Tela tela = new Tela(150, 2.6, 16.40);
+		Tela tela = new Tela(16.40); //Declarando tela com o valor unitario.
+		
 		// Cliente, Potencia das Lampadas
 		Lampada lampada = new Lampada(150.0);
 		
@@ -135,7 +132,6 @@ public class Main {
                 
             }   
         }else{
-            
             
         }
 	}
