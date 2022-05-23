@@ -7,8 +7,8 @@ public class Funcionario extends Pessoa {
 	private int id_funcionario;
     private String cargo;
 
-    public Funcionario(String cargo, String nome, String email, String endereco, String cpf) {
-    	super(nome, email, endereco, cpf);
+    public Funcionario(String cargo, String nome, String email, String telefone, String cpf) {
+    	super(nome, email, telefone, cpf);
         this.cargo = cargo;
     }
     

@@ -18,12 +18,12 @@ public class Aviario {
     private double largura;
     private double comprimento;
     private double altura;
-    private double peDireito;
+    private boolean peDireito;
     //Alguns aviarios podem possuir mais de uma estrutura.
     public List<Obstaculo> estrutura_direita = new ArrayList<Obstaculo>();
     public List<Obstaculo> estrutura_esquerda = new ArrayList<Obstaculo>();
 
-    public Aviario(Cliente cliente, double largura, double comprimento, double altura, double peDireito) {
+    public Aviario(Cliente cliente, double largura, double comprimento, double altura, boolean peDireito) {
         this.cliente = cliente;
         this.largura = largura;
         this.comprimento = comprimento;
@@ -59,21 +59,26 @@ public class Aviario {
         estrutura_esquerda.add(ee);
     }
     
-    public String getEstrutura_esquerda(){
-        Obstaculo obstaculo = null;
-        for(int i=0; i < this.estrutura_esquerda.size(); i++){
+    public Obstaculo getEstrutura_esquerda(int i){
+        return this.estrutura_esquerda.get(i);
+        /* Percorrer o array obstaculo.
+        for(i < this.estrutura_esquerda.size(); i++){
             obstaculo = this.estrutura_esquerda.get(i);
             System.out.println("Estrutura: " + obstaculo.getNome() + " | Metragem: " + obstaculo.getMetragem());
         }
-        return "Finalizado!";
+        */
     }
 
-    public double getLargura(){
-        return this.largura;
+    public int qtd_obstaculo() {
+    	return this.estrutura_esquerda.size();
     }
     
-    public void setLargura(double l){
-        this.largura = l;
+    public void setLargura(double largura){
+        this.largura = largura;
+    }
+    
+    public double getLargura(){
+        return this.largura;
     }
 
     public double getComprimento(){
@@ -92,11 +97,11 @@ public class Aviario {
         this.altura = alt;
     }  
     
-    public double getPeDireito() {
-		return peDireito;
+    public boolean getPeDireito() {
+		return this.peDireito;
 	}
 
-	public void setPeDireito(double peDireito) {
+	public void setPeDireito(boolean peDireito) {
 		this.peDireito = peDireito;
 	}
 }

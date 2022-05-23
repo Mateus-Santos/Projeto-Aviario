@@ -28,13 +28,9 @@ public class Lampada {
 
 	public double quantidadeLampdas(Aviario largura, Aviario comprimento, Aviario peDireito) {
 		int qtdLampadas = 0;
-
 		this.area = largura.getLargura() * comprimento.getComprimento();
-
 		this.lumens = (this.area * 150) / (0.55 * 0.66);
-
 		qtdLampadas = (int) Math.round(this.lumens / (this.potenciaLampada * 100 * 0.86));
-
 		return qtdLampadas;
 
 	}

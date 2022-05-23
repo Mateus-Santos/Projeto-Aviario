@@ -11,31 +11,29 @@ public abstract class Pessoa implements Serializable {
 	protected int id_pessoa;
     protected String nome;
     protected String email;
-    protected String endereco;
+    protected String telefone;
     protected String cpf;
     
-    protected Pessoa(String nome, String email, String endereco, String cpf){
+    protected Pessoa(String nome, String email, String telefone, String cpf){
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
-        this.endereco = endereco;
+        this.telefone = telefone;
     }
+
+    //Gets e Sets
     
-    
-    
-    public String getEndereco() {
-		return endereco;
+    public String getTelefone() {
+		return telefone;
 	}
 
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
-
-
+	
 	public String getCpf() {
 		return cpf;
 	}
-
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;

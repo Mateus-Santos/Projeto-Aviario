@@ -1,12 +1,22 @@
 package modelagem;
 
 public class Lona {
+	
     private double largura;
     private double comprimento;
     private boolean pe_direito;
     private double quantidade_lona;
     private double area_lona;
     
+    
+
+    public Lona(double largura , double comprimento, boolean pe_direito){
+        this.largura = largura;
+        this.comprimento = comprimento; 
+        this.area_lona = this.largura * this.comprimento;
+        this.pe_direito = pe_direito;
+    
+    }
 
     public double getLargura() {
         return largura;
@@ -47,16 +57,5 @@ public class Lona {
     public void setArea_lona(double area_lona) {
         this.area_lona = area_lona;
     }
-    
-    
-    
-    public Lona(double largura , double comprimento, boolean pe_direito){
-        this.largura = largura;
-        this.comprimento = comprimento; 
-        this.area_lona = this.largura * this.comprimento;
-        this.pe_direito = pe_direito;
-    
-    }
-    
         
 }
