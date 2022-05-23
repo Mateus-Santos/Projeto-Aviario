@@ -5,7 +5,7 @@ import java.util.List;
 
 public class BasedeDados {
 	
-	private List<Funcionario> funcionarios = new ArrayList<Funcionario>();
+	private static List<Funcionario> funcionarios = new ArrayList<Funcionario>();
     private List<Cliente> clientes = new ArrayList<Cliente>();
     private List<Aviario> aviarios = new ArrayList<Aviario>();
     
@@ -15,6 +15,7 @@ public class BasedeDados {
 	
 	public void setFuncionarios(Funcionario funcionario) {
 		this.funcionarios.add(funcionario);
+		System.out.print(funcionarios.size());
 	}
 	
 	public List<Cliente> getClientes() {

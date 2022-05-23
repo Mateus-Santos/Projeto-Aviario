@@ -50,8 +50,8 @@ public class MainView extends JFrame {
 		mnNewMenu.add(MenuItemFuncionario);
 		MenuItemFuncionario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Base base = new Base();
-				base.setVisible(true);
+				CadastroFuncionario cadastro_funcionario = new CadastroFuncionario();
+				cadastro_funcionario.setVisible(true);
 			}
 		});
 		
@@ -84,6 +84,13 @@ public class MainView extends JFrame {
 		
 		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Buscar Funcionario");
 		mnNewMenu_1.add(mntmNewMenuItem_6);
+		
+		mntmNewMenuItem_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ConsultarFuncionario consultarFuncionario = new ConsultarFuncionario();
+				consultarFuncionario.setVisible(true);
+			}
+		});
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));

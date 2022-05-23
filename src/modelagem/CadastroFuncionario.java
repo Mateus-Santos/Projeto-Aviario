@@ -2,24 +2,25 @@ package modelagem;
 
 import java.awt.EventQueue;
 
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-
+import javax.swing.JOptionPane;
 import javax.swing.JLabel;
 
 import java.awt.*;
 import java.awt.event.*;
 
-public class Base extends JFrame {
+public class CadastroFuncionario extends JFrame {
 
-	private JPanel contentPane = null;
-	private JTextField txtnome = null;
-	private JTextField txtcpf = null;
-	private JTextField txttelefone = null;
-	private JTextField txtemail = null;
-	private JTextField txtcargo = null;
+	private JPanel contentPane;
+	private JTextField txtnome;
+	private JTextField txtcpf;
+	private JTextField txttelefone;
+	private JTextField txtemail;
+	private JTextField txtcargo;
 	Controller controller = new Controller();
 
 	/**
@@ -29,27 +30,28 @@ public class Base extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Base frame = new Base();
-					frame.setVisible(true);
+					CadastroFuncionario cadastro_funcionario = new CadastroFuncionario();
+					cadastro_funcionario.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
 	}
-
-	/**
-	 * Create the frame.
-	 */
-	public Base() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+	public CadastroFuncionario() {
 		setBounds(100,100,500,300);
 		getContentPane().setLayout(null);
-		
 		JButton btnNewButton = new JButton("Salvar");
+		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				controller.salvarFuncionario(txtcargo.getText(), txtnome.getText(), txtcpf.getText(), txttelefone.getText(), txtemail.getText());
+				if(txtcargo.getText().length() > 0 && txtnome.getText().length() > 0 && txtcpf.getText().length() > 0 && txttelefone.getText().length() > 0 && txtemail.getText().length() > 0) {
+					controller.salvarFuncionario(txtcargo.getText(), txtnome.getText(), txtemail.getText(), txttelefone.getText(), txtcpf.getText());
+					setVisible(false);	//Fechar Janela após salvar
+				}else {
+					JOptionPane.showMessageDialog(null,"Preencha todos os campos.");
+				}
 			}
 		});
 		
