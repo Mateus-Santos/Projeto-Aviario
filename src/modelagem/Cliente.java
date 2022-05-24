@@ -1,17 +1,21 @@
 package modelagem;
 
-//Bibliotecas para formatar e inserir dados do tipo data.
+import java.time.format.DateTimeFormatter;
 
 public class Cliente extends Pessoa {
 	
 	private static final long serialVersionUID = 1L;
 	
+	private static int id;
 	private int id_cliente;
 	private String data_cadastro;
 
-	public Cliente(String data_cadastro, String nome, String email, String endereco, String cpf) {
-		super(nome, email, endereco, cpf);
+	public Cliente(String data_cadastro, String nome, String email, String telefone, String cpf) {
+		super(nome, email, telefone, cpf);
+		this.id= this.id + 1;
+		this.id_cliente = this.id;
 		this.data_cadastro = data_cadastro;
+		System.out.printf("Construtor na model.");
 	}
 	
 

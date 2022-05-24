@@ -1,6 +1,8 @@
 package modelagem;
 
 import java.util.List;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
 public class Controller {
 	
@@ -20,5 +22,20 @@ public class Controller {
 	public List<Funcionario> listarFuncionario() {
 		return basededados.getFuncionarios();
 	}
+	
+	//Salvar cliente na base de dados
+	public void salvarCliente(String nome, String email, String telefone, String cpf) {
+		DateTimeFormatter data = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+		String data_cadastro;
+		data_cadastro = data.format(LocalDateTime.now());
+		Cliente cliente = new Cliente(data_cadastro, nome, email, telefone, cpf);
+		basededados.setClientes(cliente);
+		System.out.printf("Cadastrado com sucesso!!");
+	}
+	
+	public List<Cliente> listarCliente() {
+		return basededados.getClientes();
+	}
+	
 	
 }

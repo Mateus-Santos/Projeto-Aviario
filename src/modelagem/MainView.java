@@ -55,9 +55,15 @@ public class MainView extends JFrame {
 			}
 		});
 		
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Novo Cliente");
-		mnNewMenu.add(mntmNewMenuItem_1);
+		JMenuItem MenuItemCliente = new JMenuItem("Novo Cliente");
+		mnNewMenu.add(MenuItemCliente);
 		
+		MenuItemCliente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CadastroCliente cadastro_cliente = new CadastroCliente();
+				cadastro_cliente.setVisible(true);
+			}
+		});
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Novo Aviario");
 		mnNewMenu.add(mntmNewMenuItem_2);
 		
@@ -84,6 +90,9 @@ public class MainView extends JFrame {
 		
 		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Buscar Funcionario");
 		mnNewMenu_1.add(mntmNewMenuItem_6);
+		
+		JMenuItem mntmNewMenuItem_6_1 = new JMenuItem("Buscar Cliente");
+		mnNewMenu_1.add(mntmNewMenuItem_6_1);
 		
 		mntmNewMenuItem_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
