@@ -20,7 +20,6 @@ public class CadastroCliente extends JFrame {
 	private JTextField txtcpf;
 	private JTextField txttelefone;
 	private JTextField txtemail;
-	private JTextField txtcargo;
 	Controller controller = new Controller();
 
 	/**

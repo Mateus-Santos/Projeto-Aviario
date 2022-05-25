@@ -64,8 +64,15 @@ public class MainView extends JFrame {
 				cadastro_cliente.setVisible(true);
 			}
 		});
-		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Novo Aviario");
-		mnNewMenu.add(mntmNewMenuItem_2);
+		JMenuItem MenuItemAviario = new JMenuItem("Novo Aviario");
+		mnNewMenu.add(MenuItemAviario);
+		
+		MenuItemAviario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CadastroAviario cadastro_aviario = new CadastroAviario();
+				cadastro_aviario.setVisible(true);
+			}
+		});
 		
 		JMenu mnNewMenu_4 = new JMenu("Novo Produto");
 		mnNewMenu.add(mnNewMenu_4);
@@ -91,15 +98,23 @@ public class MainView extends JFrame {
 		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Buscar Funcionario");
 		mnNewMenu_1.add(mntmNewMenuItem_6);
 		
-		JMenuItem mntmNewMenuItem_6_1 = new JMenuItem("Buscar Cliente");
-		mnNewMenu_1.add(mntmNewMenuItem_6_1);
-		
 		mntmNewMenuItem_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ConsultarFuncionario consultarFuncionario = new ConsultarFuncionario();
 				consultarFuncionario.setVisible(true);
 			}
 		});
+		
+		JMenuItem mntmNewMenuItem_6_1 = new JMenuItem("Buscar Cliente");
+		mnNewMenu_1.add(mntmNewMenuItem_6_1);
+		
+		mntmNewMenuItem_6_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ConsultarCliente consultar_Cliente = new ConsultarCliente();
+				consultar_Cliente.setVisible(true);
+			}
+		});
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
