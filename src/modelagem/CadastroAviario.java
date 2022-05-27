@@ -2,6 +2,8 @@ package modelagem;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -24,16 +26,16 @@ public class CadastroAviario extends JFrame {
 	private JTextField pe_direito;
 	
 	Controller controller = new Controller();
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField txtcliente;
+	private JTextField dblargura;
+	private JTextField dbcomprimento;
+	private JTextField dbaltura;
+	private JTextField txtnome_cliente;
 	private JTextField textField_4;
-	private JTextField textField_3;
+	private JTextField dbarea;
 	private JTextField textField_6;
 	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
+	private JTextField txtcpf_cliente;
+	private JTextField txtdata_cadastro;
 	private JTextField textField_5;
 	private JTextField textField_10;
 	private JTextField textField_11;
@@ -73,50 +75,64 @@ public class CadastroAviario extends JFrame {
 		lblNewLabel_1_1.setBounds(14, 95, 70, 14);
 		contentPane.add(lblNewLabel_1_1);
 		
-		textField = new JTextField();
-		textField.setBounds(11, 64, 78, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		dblargura = new JTextField();
+		dblargura.setBounds(11, 64, 78, 20);
+		contentPane.add(dblargura);
+		dblargura.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(11, 111, 78, 20);
-		contentPane.add(textField_1);
+		dbcomprimento = new JTextField();
+		dbcomprimento.setColumns(10);
+		dbcomprimento.setBounds(11, 111, 78, 20);
+		contentPane.add(dbcomprimento);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(14, 158, 77, 20);
-		contentPane.add(textField_2);
+		dbaltura = new JTextField();
+		dbaltura.setColumns(10);
+		dbaltura.setBounds(14, 158, 77, 20);
+		contentPane.add(dbaltura);
 		
-		JButton btnNewButton = new JButton("Adicionar cliente");
-		btnNewButton.setBounds(98, 11, 130, 23);
-		contentPane.add(btnNewButton);
+		JButton btnAdd_cliente = new JButton("Adicionar cliente");
+		btnAdd_cliente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AddClienteAviario addcliente = new AddClienteAviario();
+				addcliente.setVisible(true);
+			}
+		});
+		btnAdd_cliente.setBounds(98, 11, 130, 23);
+		contentPane.add(btnAdd_cliente);
 		
-		JButton btnNewButton_1 = new JButton("Adicionar Obstaculo direito");
-		btnNewButton_1.setBounds(238, 11, 161, 23);
-		contentPane.add(btnNewButton_1);
+		JButton btnObstaculoDireito = new JButton("Adicionar Obstaculo direito");
+		btnObstaculoDireito.setBounds(238, 11, 161, 23);
+		contentPane.add(btnObstaculoDireito);
 		
-		JButton btnNewButton_1_1 = new JButton("Adicionar Obstaculo esquerdo");
-		btnNewButton_1_1.setBounds(409, 11, 181, 23);
-		contentPane.add(btnNewButton_1_1);
+		btnObstaculoDireito.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CadastroObstaculo cadastrar_obstaculo = new CadastroObstaculo();
+				cadastrar_obstaculo.setVisible(true);
+			}
+		});
 		
-		txtcliente = new JTextField();
-		txtcliente.setEditable(false);
-		txtcliente.setBounds(98, 64, 130, 20);
-		contentPane.add(txtcliente);
-		txtcliente.setColumns(10);
+		
+		JButton btnObstaculoEsquerdo = new JButton("Adicionar Obstaculo esquerdo");
+		btnObstaculoEsquerdo.setBounds(409, 11, 181, 23);
+		contentPane.add(btnObstaculoEsquerdo);
+		
+		txtnome_cliente = new JTextField();
+		txtnome_cliente.setEditable(false);
+		txtnome_cliente.setBounds(98, 64, 130, 20);
+		contentPane.add(txtnome_cliente);
+		txtnome_cliente.setColumns(10);
+		
+		dbarea = new JTextField();
+		dbarea.setEditable(false);
+		dbarea.setColumns(10);
+		dbarea.setBounds(14, 210, 75, 20);
+		contentPane.add(dbarea);
 		
 		textField_4 = new JTextField();
 		textField_4.setEditable(false);
 		textField_4.setColumns(10);
 		textField_4.setBounds(248, 64, 70, 20);
 		contentPane.add(textField_4);
-		
-		textField_3 = new JTextField();
-		textField_3.setEditable(false);
-		textField_3.setColumns(10);
-		textField_3.setBounds(14, 210, 75, 20);
-		contentPane.add(textField_3);
 		
 		JLabel area = new JLabel("Area");
 		area.setBounds(14, 189, 46, 14);
@@ -138,17 +154,17 @@ public class CadastroAviario extends JFrame {
 		lblNewLabel_1.setBounds(98, 50, 94, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		textField_8 = new JTextField();
-		textField_8.setEditable(false);
-		textField_8.setColumns(10);
-		textField_8.setBounds(99, 111, 130, 20);
-		contentPane.add(textField_8);
+		txtcpf_cliente = new JTextField();
+		txtcpf_cliente.setEditable(false);
+		txtcpf_cliente.setColumns(10);
+		txtcpf_cliente.setBounds(99, 111, 130, 20);
+		contentPane.add(txtcpf_cliente);
 		
-		textField_9 = new JTextField();
-		textField_9.setEditable(false);
-		textField_9.setColumns(10);
-		textField_9.setBounds(98, 158, 130, 20);
-		contentPane.add(textField_9);
+		txtdata_cadastro = new JTextField();
+		txtdata_cadastro.setEditable(false);
+		txtdata_cadastro.setColumns(10);
+		txtdata_cadastro.setBounds(98, 158, 130, 20);
+		contentPane.add(txtdata_cadastro);
 		
 		JLabel lblNewLabel_2 = new JLabel("CPF");
 		lblNewLabel_2.setBounds(98, 95, 46, 14);

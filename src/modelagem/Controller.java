@@ -8,6 +8,7 @@ public class Controller {
 	
 	public BasedeDados basededados = new BasedeDados();
 	
+	//Salvar funcionario na base de dados
 	public void salvarFuncionario(String cargo, String nome, String email, String telefone, String cpf) {
 		Funcionario funcionario = new Funcionario(cargo, nome, email, telefone, cpf);
 		System.out.printf(funcionario.getCargo());
@@ -25,7 +26,7 @@ public class Controller {
 	
 	//Salvar cliente na base de dados
 	public void salvarCliente(String nome, String email, String telefone, String cpf) {
-		DateTimeFormatter data = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+		DateTimeFormatter data = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 		String data_cadastro;
 		data_cadastro = data.format(LocalDateTime.now());
 		Cliente cliente = new Cliente(data_cadastro, nome, email, telefone, cpf);
@@ -37,5 +38,16 @@ public class Controller {
 		return basededados.getClientes();
 	}
 	
+	//Cadsatro de obstaculos.
+	public Obstaculo salvarObstaculo(String nome, double metragem) {
+		Obstaculo obstaculo = new Obstaculo(nome, metragem);
+		basededados.setObstaculo(obstaculo);
+		System.out.printf("Cadastrado com sucesso!!");
+		return obstaculo;
+	}
+	
+	public List<Obstaculo> listarObstaculo() {
+		return basededados.getObstaculos();
+	}
 	
 }

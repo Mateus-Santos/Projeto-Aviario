@@ -7,11 +7,13 @@ public class BasedeDados {
 	
 	private static List<Funcionario> funcionarios = new ArrayList<Funcionario>();
     private static List<Cliente> clientes = new ArrayList<Cliente>();
+    private static List<Obstaculo> obstaculos = new ArrayList<Obstaculo>();
+    
     private static List<Aviario> aviarios = new ArrayList<Aviario>();
     
     //Funções sobre Funcionarios.
 	public List<Funcionario> getFuncionarios() {
-		return funcionarios;
+		return this.funcionarios;
 	}
 	
 	public void setFuncionarios(Funcionario funcionario) {
@@ -21,7 +23,7 @@ public class BasedeDados {
 	
 	//Funções sobre clientes.
 	public List<Cliente> getClientes() {
-		return clientes;
+		return this.clientes;
 	}
 	
 	public void setClientes(Cliente cliente) {
@@ -31,5 +33,18 @@ public class BasedeDados {
 		System.out.println(cliente.getCpf());
 		this.clientes.add(cliente);
 		System.out.println("Quantidade atual de clientes cadastrados. " + this.clientes.size());
+	}
+	
+	//Funções sobre obstaculos.
+	
+	public List<Obstaculo> getObstaculos() {
+		return this.obstaculos;
+	}
+	
+	public void setObstaculo(Obstaculo obstaculo) {
+		System.out.println(obstaculo.getNome());
+		System.out.println(obstaculo.getMetragem());
+		this.obstaculos.add(obstaculo);
+		System.out.println("Quantidade atual de obstaculos cadastrados." + this.obstaculos.size());
 	}
 }
